@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 html {
-  font-size: 1.0625rem;
+  font-size: 63%;
   box-sizing: border-box;
 }
 * {
@@ -12,11 +13,12 @@ body,
   height: 100vh;
   margin: 0;
 }
+body,
 input,
 select,
 textarea {
-  font-family: Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
 }
 
 .grid-container {
@@ -44,6 +46,73 @@ main {
 header a {
   text-decoration: none !important;
 }
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main {
+  flex: 3 60rem;
+}
+.sidebar {
+  flex: 1 20rem;
+}
+
+/* Products start*/
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.products li {
+  flex: 0 1 29rem;
+  height: 47rem;
+  padding: 1rem;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.product img {
+  max-width: 37rem;
+  max-height: 37rem;
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+}
+.product-price div,
+.product-price button {
+  text-align: center;
+  flex: 1;
+  font-size: 1.5625rem;
+}
+.product-price div {
+  font-size: 2rem;
+}
+/* Products End*/
+
+/* Filter start */
+.filter {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 1px solid #c0c0c0;
+  justify-content: space-between;
+}
+.filter div {
+  flex: 1;
+}
+/* Filter End */
 
 footer {
   grid-area: footer;
