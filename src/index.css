@@ -162,6 +162,30 @@ header a {
 }
 /* Cart section end */
 
+/* Form Container */
+form {
+  width: 100%;
+}
+.form-container {
+  width: 100%;
+  padding: 0;
+  list-style: none;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.form-container input {
+  padding: 1rem;
+  width: 100%;
+  border: 1px solid #e1e1e1;
+}
+.form-container li {
+  margin-bottom: 15px;
+}
+/* Form Container */
+
 footer {
   grid-area: footer;
   display: flex;
