@@ -186,6 +186,30 @@ form {
 }
 /* Form Container */
 
+/* product Modal start */
+.product-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 96vh;
+}
+.product-details img {
+  max-height: 100vh;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+.product-details-descrition {
+  flex: 1 1;
+  padding-left: 20px;
+}
+.close-modal {
+  position: absolute;
+  right: 1rem;
+  top: 2.5rem;
+  z-index: 1000;
+}
+/* product Modal end */
+
 footer {
   grid-area: footer;
   display: flex;
