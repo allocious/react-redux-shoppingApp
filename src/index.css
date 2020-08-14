@@ -114,6 +114,54 @@ header a {
 }
 /* Filter End */
 
+/* Cart section start */
+.cart {
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+}
+.cart-header {
+  border-bottom: 1px solid #c0c0c0;
+}
+.cart-items {
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  text-decoration: none;
+}
+.cart-items img {
+  width: 5rem;
+}
+.cart-items li {
+  display: flex;
+}
+.cart-items li div {
+  padding: 0.5rem;
+}
+.cart-items li div:last-child {
+  flex: 1;
+}
+.right {
+  text-align: right;
+}
+.cart-items li button,
+.cart button {
+  font-size: 1.3rem;
+  margin-left: 5px;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.total div,
+.total > button {
+  flex: 1;
+  font-size: 1.7rem;
+}
+/* Cart section end */
+
 footer {
   grid-area: footer;
   display: flex;
