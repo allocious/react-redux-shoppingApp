@@ -5,24 +5,24 @@ const shortid = require('shortid');
 
 const app = express();
 
-app.use(bodyParser);
+app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost/react-shopping-cart-db', {
-  useNewURLParser: true,
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/react-shopping-cart-db', {
+  useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true
 });
 
-const Product = mongoose.modelNames(
+const Product = mongoose.model(
   'products',
   new mongoose.Schema({
-    _id: { type: shortid.generate },
+    _id: { type: String, default: shortid.generate },
     image: String,
     title: String,
     description: String,
     image: String,
     price: Number,
-    availableSize: [String]
+    availableSizes: [String]
   })
 );
 
@@ -33,13 +33,13 @@ app.get('/api/products', async (req, res) => {
 
 app.post('/api/products', async (req, res) => {
   const newProduct = new Product(req.body);
-  const savedProduct = await newProdcut.save();
-  res.send(saveProduct);
+  const savedProduct = await newProduct.save();
+  res.send(savedProduct);
 });
 
 app.delete('/api/products/:id', async (req, res) => {
-  const deletedProdcut = await Product.findByIdAndDelete(req.params.id);
-  res.send(deletedProdcut);
+  const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+  res.send(deletedProduct);
 });
 
 const port = process.env.PORT || 5000;

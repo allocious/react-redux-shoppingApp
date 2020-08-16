@@ -4,6 +4,8 @@ import data from './data.json';
 import Products from './components/Products';
 import Filter from './components/Filter';
 import Cart from './components/Cart';
+import store from './store';
+import { Provider } from 'react-redux';
 
 class App extends React.Component {
   constructor() {
@@ -64,31 +66,33 @@ class App extends React.Component {
   };
   render() {
     return (
-      <div className='grid-container'>
-        <header className='bg-primary  text-white'>
-          <div className='container-fluid'>
-            <div className='row'>
-              <div className='col'>
-                <a href='/' className=' text-white'>
-                  React Shopping Cart
-                </a>
+      <Provider store={store}>
+        <div className='grid-container'>
+          <header className='bg-primary  text-white'>
+            <div className='container-fluid'>
+              <div className='row'>
+                <div className='col'>
+                  <a href='/' className=' text-white'>
+                    React Shopping Cart
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        </header>
-        <main>
-          <div className='content'>
-            <div className='main'>
-              <Filter count={this.state.products.length} size={this.state.size} sort={this.state.sort} filterProducts={this.filterProducts} sortProducts={this.sortProducts} />
-              <Products products={this.state.products} addToCart={this.addToCart} />
+          </header>
+          <main>
+            <div className='content'>
+              <div className='main'>
+                <Filter count={this.state.products.length} size={this.state.size} sort={this.state.sort} filterProducts={this.filterProducts} sortProducts={this.sortProducts} />
+                <Products products={this.state.products} addToCart={this.addToCart} />
+              </div>
+              <div className='sidebar'>
+                <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart} createOrder={this.createOrder} />
+              </div>
             </div>
-            <div className='sidebar'>
-              <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart} createOrder={this.createOrder} />
-            </div>
-          </div>
-        </main>
-        <footer className='bg-primary text-white'>All rights reserved by @allocious</footer>
-      </div>
+          </main>
+          <footer className='bg-primary text-white'>All rights reserved by @allocious</footer>
+        </div>
+      </Provider>
     );
   }
 }
