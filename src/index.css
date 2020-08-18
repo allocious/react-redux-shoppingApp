@@ -210,6 +210,31 @@ form {
 }
 /* product Modal end */
 
+/* Order Modal start */
+.order-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+.order-details li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-details li div {
+  padding: 10px;
+}
+.order-details .items {
+  text-align: left;
+  padding: 0;
+}
+.success-message {
+  color: green;
+}
+/* Order Modal End */
+
 footer {
   grid-area: footer;
   display: flex;
